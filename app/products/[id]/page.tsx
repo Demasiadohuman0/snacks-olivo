@@ -1,5 +1,6 @@
 import { stripe } from "@/lib/stripe";
 import { ProductDetail } from "@/components/product-detail";
+import { notFound } from "next/navigation";
 
 export default async function ProductPage({
     params,
@@ -10,7 +11,10 @@ export default async function ProductPage({
         expand: ["default_price"],
     });
     const plainProduct = JSON.parse(JSON.stringify(product));
-    
+    if (!plainProduct.default_price) {
+        notFound();
+    }
 
-  return <ProductDetail product={product} />;
+  return <ProductDetail product={plainProduct} />
 }
+

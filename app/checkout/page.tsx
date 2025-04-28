@@ -1,7 +1,7 @@
 "use client";
 
 import { userCartStore } from "@/store/cart-store";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { checkoutAction } from "./checkout-action";
 export default function CheckoutPage() {
